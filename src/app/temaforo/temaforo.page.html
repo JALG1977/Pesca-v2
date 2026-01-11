@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar class="toolbar-principal">
+    <ion-buttons slot="start">
+      <ion-button class="btn-icon" (click)="volver()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tema</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-refresher slot="fixed" (ionRefresh)="cargarTodo($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngIf="tema" class="card-tema">
+    <ion-card-header>
+      <ion-card-title class="tema-titulo">{{ tema.titulo }}</ion-card-title>
+      <ion-card-subtitle class="tema-sub">
+        <strong>{{ tema.autor_nombre || 'Usuario' }}</strong> · {{ formatearFecha(tema.creado_en) }}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content *ngIf="tema.descripcion">
+      {{ tema.descripcion }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="!tema">
+    <ion-card-content>Cargando tema...</ion-card-content>
+  </ion-card>
+
+  <ion-card class="card-comentar">
+    <ion-card-content>
+      <div class="autor-box">
+        Comentando como: <strong>{{ nombreUsuario || 'Usuario' }}</strong>
+      </div>
+
+      
+      <ion-item class="ion-margin-top">
+        <ion-label position="stacked">Comentario</ion-label>
+        <ion-input [(ngModel)]="comentario" placeholder="Escribe tu comentario..."></ion-input>
+      </ion-item>
+
+      <ion-button
+        expand="block"
+        class="btn-publicar ion-margin-top"
+        [disabled]="publicando"
+        (click)="publicarComentario()">
+        {{ publicando ? 'Publicando...' : 'Publicar' }}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list lines="none" *ngIf="mensajes.length > 0">
+    <ion-item class="msg-item" *ngFor="let m of mensajes">
+      <ion-label>
+        <h3 class="msg-autor">{{ m.autor_nombre || 'Usuario' }}</h3>
+        <p class="msg-fecha">{{ formatearFecha(m.creado_en) }}</p>
+        <p class="msg-texto">{{ m.texto }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngIf="mensajes.length === 0">
+    <ion-card-content>
+      No hay comentarios todavía. Sé el primero en comentar.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

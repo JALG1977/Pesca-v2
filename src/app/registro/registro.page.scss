@@ -1,0 +1,29 @@
+.registro-content {
+  padding: 16px;
+}
+
+.registro-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 16px 0 24px 0;
+}
+
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.acciones {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mensaje-error p {
+  margin: 10px 4px 0 4px;
+  font-weight: 600;
+  color: #001f3f; /* azul marino */
+  ;
+}

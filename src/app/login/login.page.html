@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-content ion-padding">
+  <h1 class="page-title">Bienvenido a Pesca</h1>
+
+  <div class="login-form">
+    <ion-item>
+      <ion-label position="stacked">Correo electrónico</ion-label>
+      <ion-input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        autocomplete="email"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+
+      <ion-input
+        [type]="passwordVisible ? 'text' : 'password'"
+        [(ngModel)]="password"
+        name="password"
+        autocomplete="current-password"
+      ></ion-input>
+
+      <ion-button
+        fill="clear"
+        slot="end"
+        type="button"
+        (click)="togglePassword()"
+      >
+        {{ passwordVisible ? 'Ocultar' : 'Ver' }}
+      </ion-button>
+    </ion-item>
+
+    <ion-button
+      class="btn-login"
+      expand="block"
+      type="button"
+      [disabled]="cargando"
+      (click)="iniciarSesion()"
+      
+    >
+      <ion-spinner *ngIf="cargando" name="crescent" class="btn-spinner"></ion-spinner>
+      <span class="btn-text">{{ cargando ? 'Ingresando...' : 'Ingresar' }}</span>
+    </ion-button>
+  </div>
+
+  <div class="registro-link">
+    <p class="text">¿No tienes cuenta?</p>
+    <ion-button fill="clear" type="button" (click)="irARegistro()" (pointerup)="irARegistro()">
+      Regístrate aquí
+    </ion-button>
+  </div>
+
+  <ion-text *ngIf="mensaje" class="mensaje-error">
+    <p>{{ mensaje }}</p>
+  </ion-text>
+
+  <ion-toast
+    [isOpen]="toastAbierto"
+    [message]="toastMensaje"
+    [duration]="1500"
+    (didDismiss)="toastAbierto = false"
+  ></ion-toast>
+</ion-content>

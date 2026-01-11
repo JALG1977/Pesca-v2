@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mis capturas</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="irAgregar()">Nueva</ion-button>
+      <ion-button (click)="cerrarSesion()">Salir</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1 class="page-title">Galería</h1>
+
+  <ion-refresher slot="fixed" (ionRefresh)="cargarCapturas($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-button expand="block" type="button" (click)="irAgregar()">
+    Agregar nueva captura
+  </ion-button>
+
+  <ng-container *ngIf="capturas.length > 0; else sinCapturas">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" sizeMd="6" sizeLg="4" *ngFor="let cap of capturas">
+          <ion-card>
+            <img [src]="cap.imagenWebPath" alt="Captura" />
+
+            <ion-card-header>
+              <ion-card-title>{{ cap.titulo }}</ion-card-title>
+              <ion-card-subtitle>
+                {{ cap.fecha | date:'short' }}
+              </ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p *ngIf="cap.descripcion">{{ cap.descripcion }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-container>
+
+  <ng-template #sinCapturas>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>No hay capturas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Aún no has agregado capturas. Presiona “Agregar nueva captura”.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+</ion-content>

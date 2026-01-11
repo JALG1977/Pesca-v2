@@ -1,0 +1,62 @@
+.toolbar-principal {
+  --background: #001f3f;
+  --color: #ffffff;
+}
+
+.btn-icon {
+  --color: #ffffff;
+}
+
+.card-tema,
+.card-comentar {
+  border-radius: 14px;
+}
+
+.tema-titulo {
+  color: #001f3f;
+  font-weight: 800;
+}
+
+.tema-sub {
+  color: rgba(0, 31, 63, 0.8);
+}
+
+.autor-box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0, 31, 63, 0.15);
+  color: #001f3f;
+}
+
+ion-item {
+  --background: #ffffff;
+  border-radius: 10px;
+}
+
+.btn-publicar {
+  --background: #001f3f;
+  --color: #ffffff;
+  --border-radius: 10px;
+  font-weight: 700;
+}
+
+.msg-item {
+  --background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.msg-autor {
+  color: #001f3f;
+  font-weight: 700;
+}
+
+.msg-fecha {
+  color: rgba(0, 31, 63, 0.7);
+  font-size: 0.85rem;
+}
+
+.msg-texto {
+  color: rgba(0, 31, 63, 0.9);
+}

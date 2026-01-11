@@ -1,0 +1,80 @@
+/* ==== Encabezado ==== */
+.chat-header {
+  --background: #001f3f; /* Azul marino */
+  color: #fff;
+  text-align: center;
+}
+
+/* ==== Contenido del chat ==== */
+.chat-content {
+  --background: #e9eef4; /* gris muy suave */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ==== Burbujas de mensaje ==== */
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.message-received {
+  background: #ffffff;
+  color: #333;
+  align-self: flex-start;
+  border: 1px solid #d3d3d3;
+}
+
+.message-sent {
+  background: #001f3f; /* Azul marino */
+  color: white;
+  align-self: flex-end;
+  border-top-right-radius: 0;
+}
+
+/* Hora del mensaje */
+.time {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* ==== Barra inferior ==== */
+.chat-footer {
+  border-top: 1px solid #ccc;
+}
+
+.footer-toolbar {
+  --background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.input-chat {
+  flex: 1;
+  margin-right: 10px;
+  border-radius: 20px;
+  padding-left: 12px;
+  background: #f1f1f1;
+}
+
+.btn-send {
+  --background: #001f3f;
+  --color: #fff;
+  --border-radius: 20px;
+  height: 38px;
+  padding: 0 18px;
+}

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="registro-content ion-padding">
+  <h2 class="registro-title">Crear cuenta</h2>
+
+  <div class="registro-form">
+    <ion-item>
+      <ion-label position="stacked">Nombre completo</ion-label>
+      <ion-input [(ngModel)]="nombreCompleto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Correo electrónico</ion-label>
+      <ion-input type="text" [(ngModel)]="email" autocomplete="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password" autocomplete="new-password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Confirmar contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="confirmarPassword" autocomplete="new-password"></ion-input>
+    </ion-item>
+
+    
+
+    <div class="acciones">
+      <!-- SOLO pointerup  -->
+      <ion-button
+        expand="block"
+        type="button"
+        [disabled]="cargando"
+        (pointerup)="registrar()"
+      >
+        {{ cargando ? 'Registrando...' : 'Registrarse' }}
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        fill="clear"
+        type="button"
+        (pointerup)="irALogin()"
+      >
+        ¿Ya tienes cuenta? Inicia sesión
+      </ion-button>
+      <!-- Mensaje visible  -->
+    <ion-text *ngIf="mensaje" class="mensaje-error">
+      <p>{{ mensaje }}</p>
+    </ion-text>
+    </div>
+  </div>
+
+  <!-- Toast-->
+  <ion-toast
+    [isOpen]="toastAbierto"
+    [message]="toastMensaje"
+    [duration]="1500"
+    (didDismiss)="toastAbierto = false"
+  ></ion-toast>
+</ion-content>

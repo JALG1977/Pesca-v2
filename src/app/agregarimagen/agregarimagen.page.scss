@@ -1,0 +1,17 @@
+.botones-imagen {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn-text {
+  margin-left: 8px;
+}
+
+.mensaje-error p {
+  margin: 10px 4px 0 4px;
+  font-weight: 600;
+  color: #001f3f; /* azul marino */
+  text-align: center;
+}

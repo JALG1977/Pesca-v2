@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Clima</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="volverHome()">Home</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1 class="page-title">Consulta de clima</h1>
+
+  <ion-refresher slot="fixed" (ionRefresh)="cargarClima($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-item>
+    <ion-label>Localidad</ion-label>
+    <ion-select [(ngModel)]="localidadSeleccionadaId" (ionChange)="onCambiarLocalidad()">
+      <ion-select-option *ngFor="let l of localidades" [value]="l.id">
+        {{ l.nombre }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="cargarClima()">
+    Actualizar clima
+  </ion-button>
+
+  <ion-card *ngIf="!cargando">
+    <ion-card-header>
+      <ion-card-title>{{ nombreLocalidadActual }}</ion-card-title>
+      <ion-card-subtitle *ngIf="ultimaActualizacion">
+        Última actualización: {{ ultimaActualizacion }}
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>🌡️ Temperatura</ion-label>
+          <ion-note slot="end">{{ temperaturaC }} °C</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>💨 Viento</ion-label>
+          <ion-note slot="end">{{ vientoKmh }} km/h</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>🧭 Dirección</ion-label>
+          <ion-note slot="end">{{ direccionViento }}°</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>☁️ Estado</ion-label>
+          <ion-note slot="end">{{ estado }}</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="estado" *ngIf="cargando">
+    <ion-spinner></ion-spinner>
+    <p>Cargando clima...</p>
+  </div>
+
+</ion-content>

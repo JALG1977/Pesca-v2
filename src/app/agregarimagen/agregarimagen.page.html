@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button type="button" (click)="volverHome()">Volver</ion-button>
+    </ion-buttons>
+    <ion-title>Agregar captura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1 class="page-title">Nueva captura</h1>
+
+  <div class="form-container">
+    <ion-item>
+      <ion-label position="stacked">Título</ion-label>
+      <ion-input
+        [(ngModel)]="titulo"
+        name="titulo"
+        placeholder="Ej: Trucha en río Maipo"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descripción (opcional)</ion-label>
+      <ion-textarea
+        [(ngModel)]="descripcion"
+        name="descripcion"
+        autoGrow="true"
+      ></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Imagen</ion-label>
+      <div class="botones-imagen">
+        <ion-button type="button" expand="block" (click)="tomarFoto()">
+          Tomar foto
+        </ion-button>
+
+        <ion-button type="button" expand="block" (click)="elegirDeGaleria()">
+          Galería
+        </ion-button>
+      </div>
+    </ion-item>
+
+    <div class="preview" *ngIf="imagenBase64">
+      <p>Vista previa:</p>
+      <img [src]="imagenBase64" alt="Vista previa" />
+    </div>
+
+    <ion-button
+      expand="block"
+      type="button"
+      (click)="guardar()"
+      [disabled]="cargando"
+    >
+      <ion-spinner *ngIf="cargando" name="crescent"></ion-spinner>
+      <span class="btn-text">{{ cargando ? 'Guardando...' : 'Guardar captura' }}</span>
+    </ion-button>
+
+    <!-- Mensaje visible  -->
+    <ion-text *ngIf="mensaje" class="mensaje-error">
+      <p>{{ mensaje }}</p>
+    </ion-text>
+  </div>
+
+  <!-- Toast declarativo -->
+  <ion-toast
+    [isOpen]="toastAbierto"
+    [message]="toastMensaje"
+    [duration]="1500"
+    (didDismiss)="toastAbierto = false"
+  ></ion-toast>
+</ion-content>

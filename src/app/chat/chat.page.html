@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="chat-header">
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="chat-content">
+
+  <!-- Área donde irían los mensajes -->
+  <div class="messages-container">
+
+    <!-- Mensaje recibido -->
+    <div class="message message-received">
+      <p>Hola ¿Cómo estás?</p>
+      <span class="time">10:32</span>
+    </div>
+
+    <!-- Mensaje enviado -->
+    <div class="message message-sent">
+      <p>Bien, ¿y tú?</p>
+      <span class="time">10:33</span>
+    </div>
+
+    <!-- Más mensajes de ejemplo -->
+    <div class="message message-received">
+      <p>Todo bien, gracias</p>
+      <span class="time">10:34</span>
+    </div>
+
+  </div>
+
+</ion-content>
+
+<!-- Barra de chat -->
+<ion-footer class="chat-footer">
+  <ion-toolbar class="footer-toolbar">
+
+    <ion-input
+      class="input-chat"
+      placeholder="Escribe un mensaje..."
+      type="text">
+    </ion-input>
+
+    <ion-button class="btn-send" color="primary">
+      Enviar
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>

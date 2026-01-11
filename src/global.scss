@@ -1,0 +1,136 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import '@ionic/angular/css/palettes/dark.system.css';
+
+/* =============================
+   PALETA DE COLORES GLOBAL
+   ============================= */
+:root {
+  --azul-marino: #001f3f;
+  --blanco: #ffffff;
+  --gris-fondo: #f4f5f8;
+}
+
+/* =============================
+   TOOLBARS / HEADERS
+   ============================= */
+ion-toolbar,
+ion-header {
+  --background: var(--azul-marino) !important;
+  --color: var(--blanco) !important;
+}
+
+/* =============================
+   TITULOS GENERALES
+   ============================= */
+.page-title,
+h1, h2, h3, h4, h5 {
+  color: var(--azul-marino) !important;
+  font-weight: 700;
+}
+
+/* =============================
+   FORMULARIOS
+   ============================= */
+ion-item {
+  --background: var(--blanco) !important;
+  --color: var(--azul-marino) !important;
+  border-radius: 10px;
+}
+
+ion-label {
+  color: var(--azul-marino) !important;
+}
+
+ion-input,
+ion-textarea {
+  --color: var(--azul-marino) !important;
+}
+
+/* =============================
+   BOTONES
+   ============================= */
+ion-button {
+  --background: var(--azul-marino) !important;
+  --color: var(--blanco) !important;
+  --border-radius: 8px !important;
+  font-weight: 600;
+}
+
+ion-button[fill="clear"] {
+  --color: var(--azul-marino) !important;
+  --color: var(--blanco) !important;
+  --border-radius: 8px !important;
+  font-weight: 600;
+}
+
+/* =============================
+   ALERTAS
+   ============================= */
+.alert-wrapper {
+  background: var(--blanco) !important;
+  color: var(--azul-marino) !important;
+}
+
+.alert-title {
+  color: var(--azul-marino) !important;
+}
+
+/* =============================
+   TARJETAS
+   ============================= */
+ion-card {
+  --background: var(--blanco) !important;
+  --color: var(--azul-marino) !important;
+}
+
+ion-card-title,
+ion-card-subtitle {
+  color: var(--azul-marino) !important;
+}
+
+/* =============================
+   FONDO GENERAL
+   ============================= */
+ion-content {
+  --background: var(--gris-fondo) !important;
+}
+
+ ion-title{
+    --background: #001f3f; /* azul marino */
+  color: #ffffff;
+ }

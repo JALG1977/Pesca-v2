@@ -1,0 +1,37 @@
+.toolbar-principal {
+  --background: #001f3f;
+  --color: #ffffff;
+}
+
+.card-form {
+  border-radius: 14px;
+}
+
+ion-item {
+  --background: #ffffff;
+  border-radius: 10px;
+}
+
+.autor-box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(0, 31, 63, 0.15);
+}
+
+.autor-label {
+  color: #001f3f;
+  opacity: 0.85;
+  margin-right: 6px;
+}
+
+.autor-value {
+  color: #001f3f;
+}
+
+.btn-guardar {
+  --background: #001f3f;
+  --color: #ffffff;
+  --border-radius: 10px;
+  font-weight: 600;
+}
