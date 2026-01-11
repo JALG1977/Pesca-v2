@@ -11,22 +11,22 @@ Instalar la aplicación en un teléfono o Tablet.</br>
 2) Clonar el proyecto</br>
 •	git clone https://github.com/JALG1977/Pesca-v2.git</br>
 •	cd Pesca-v2</br>
-3) Instalar dependencias
-•	npm install
-4)Android Studio + Android SDK
-•	Cable USB
-•	En el teléfono: Depuración por USB activada
-5) Instalar dependencias
-•	npm install
-6) Build web
-•	ionic build
-7) Crear/actualizar plataforma Android
-•	Si no existe carpeta android/:
-o	npx cap add android
-•	Si ya existe:
-o	npx cap sync android
-8) Abrir en Android Studio
-•	npx cap open android
-•	En Android Studio:
-•	Selecciona el teléfono
-•	Run 
+3) Instalar dependencias</br>
+•	npm install</br>
+4)Android Studio + Android SDK</br>
+•	Cable USB</br>
+•	En el teléfono: Depuración por USB activada</br>
+5) Instalar dependencias</br>
+•	npm install</br>
+6) Build web</br>
+•	ionic build</br>
+7) Crear/actualizar plataforma Android</br>
+•	Si no existe carpeta android/:</br>
+o	npx cap add android</br>
+•	Si ya existe:</br>
+o	npx cap sync android</br>
+8) Abrir en Android Studio</br>
+•	npx cap open android</br>
+•	En Android Studio:</br>
+•	Selecciona el teléfono</br>
+•	Run </br>
